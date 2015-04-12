@@ -26,7 +26,7 @@
             android:label="@string/title_activity_home" >
         </activity>
         <activity
-            android:name=".SimpleActivity"
+            android:name=".DebugLauncher"
             android:label="@string/title_activity_simple" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +49,21 @@
             android:label="@string/title_activity_register"
             android:windowSoftInputMode="adjustResize|stateVisible" >
         </activity>
+        <activity
+            android:name="com.parse.MealListActivity"
+            android:label="@string/title_activity_meal_list" >
+        
+
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="android.app.Activity" />
+        </activity>
+        <activity
+            android:name="com.parse.NewMealActivity"
+            android:label="@string/title_activity_new_meal" >
+        </activity>
     </application>
+     
 
     <!--
      To retrieve OAuth 2.0 tokens or invalidate tokens to disconnect a user. This disconnect

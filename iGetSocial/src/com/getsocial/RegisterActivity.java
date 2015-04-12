@@ -11,13 +11,13 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.EditorInfo;
 import android.widget.ArrayAdapter;
@@ -25,6 +25,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,7 +57,8 @@ public class RegisterActivity extends Activity implements
 	protected void onCreate(Bundle savedInstanceState)
 		{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_login);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.activity_register);
 
 		// Set up the login form.
 		mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -274,7 +276,7 @@ public class RegisterActivity extends Activity implements
 		// Create adapter to tell the AutoCompleteTextView what to show in its
 		// dropdown list.
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-				LoginActivity.this,
+				RegisterActivity.this,
 				android.R.layout.simple_dropdown_item_1line,
 				emailAddressCollection);
 

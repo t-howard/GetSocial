@@ -30,12 +30,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/plus_sign_in_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="32dp" />
-
             <LinearLayout
                 android:id="@+id/plus_sign_out_buttons"
                 android:layout_width="match_parent"
@@ -93,7 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="@string/action_sign_in"
+                    android:text="Login"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>

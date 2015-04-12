@@ -1,6 +1,7 @@
 package com.getsocial;
 
 import com.getsocial.R;
+import com.getsocial.util.Toaster;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -10,21 +11,24 @@ import com.parse.mealspotting.Meal;
 import com.parse.mealspotting.NewMealActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class SimpleActivity extends Activity
+public class DebugLauncher extends Activity
 	{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 		{
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_simple);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		setContentView(R.layout.actiity_debug_launcher);
 		Button saveButton = ((Button) findViewById(R.id.btnAddMeal));
 		saveButton.setOnClickListener(new View.OnClickListener()
 		{
@@ -84,6 +88,21 @@ public class SimpleActivity extends Activity
 		return true;
 		}
 
+	public void onBtnOpenRegister(View view)
+		{
+		//Toaster.toast("Test");
+		//Toaster.notify(this, "User Created");
+		Intent i = new Intent(this, RegisterActivity.class);
+		startActivity(i);
+		}
+
+	public void onBtnOpenLogin(View view)
+		{
+		//Toaster.toast("Test");
+		//Toaster.notify(this, "User Created");
+		Intent i = new Intent(this, LoginActivity.class);
+		startActivity(i);
+		}
 	public void onBtnCreateUser(View view)
 		{
 		final ParseUser user = new ParseUser();
@@ -104,8 +123,7 @@ public class SimpleActivity extends Activity
 					a++;
 					String foo = user.getObjectId();
 					ParseUser u = ParseUser.getCurrentUser();
-					Toast.makeText(getApplicationContext(), "Saved: ",
-							Toast.LENGTH_SHORT).show();
+					Toaster.notify(DebugLauncher.this,"User Created");
 					// Hooray! Let them use the app now.
 					}
 				else
@@ -114,9 +132,7 @@ public class SimpleActivity extends Activity
 					a++;
 					// Sign up didn't succeed. Look at the ParseException
 					// to figure out what went wrong
-					Toast.makeText(getApplicationContext(),
-							"Error saving: " + e.getMessage(),
-							Toast.LENGTH_SHORT).show();
+					Toaster.notify(DebugLauncher.this,"Couldn't create user " + e.getMessage());
 					}
 				}
 		});

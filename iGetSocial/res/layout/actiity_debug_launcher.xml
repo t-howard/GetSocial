@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.discotech.android.activity.DebugLauncher" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dip"
+                android:paddingTop="20dip"
+                android:text="GetSocial MiniLauncher"
+                android:textSize="24sp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Go to Register Screen"
+                android:layout_margin="10dip"
+                android:onClick="onBtnOpenRegister" />
+            
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Go to Login Screen"
+                android:layout_margin="10dip"
+                android:onClick="onBtnOpenLogin" />
+              <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Go to ColorTest"
+                android:layout_margin="10dip"
+                android:onClick="onBtnOpenColorTest" />
+            
+            <Button
+                android:id="@+id/btnCreateUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBtnCreateUser"
+                android:text="Create User" />
+
+            <Button
+                android:id="@+id/btnLoginUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onBtnLoginUser"
+                android:text="Login User" />
+
+            <Button
+                android:id="@+id/btnAddMeal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create Meal" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:text="Rest Test"
+                android:visibility="visible" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:text="Halt"
+                android:visibility="visible" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:text="Do RX" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:onClick="onBtnDoRX2" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
