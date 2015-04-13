@@ -1,6 +1,9 @@
-package com.getsocial;
+package com.getsocial.activity;
 
 import com.getsocial.R;
+import com.getsocial.R.id;
+import com.getsocial.R.layout;
+import com.getsocial.R.menu;
 import com.getsocial.util.Toaster;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
@@ -87,7 +90,34 @@ public class DebugLauncher extends Activity
 		getMenuInflater().inflate(R.menu.simple, menu);
 		return true;
 		}
+	
+	public void onBtnOpenColorTest(View view)
+		{
+		//Toaster.toast("Test");
+		//Toaster.notify(this, "User Created");
+		Intent i = new Intent(this, ColorTest1Activity.class);
+		startActivity(i);
+		}
 
+	public void onBtnMealList(View view)
+		{
+		//Toaster.toast("Test");
+		//Toaster.notify(this, "User Created");
+		Intent i = new Intent(this, com.parse.mealspotting.MealListActivity.class);
+		startActivity(i);
+		}
+	
+	public void onBtnNewMeal(View view)
+		{
+		//Toaster.toast("Test");
+		//Toaster.notify(this, "User Created");
+		Intent i = new Intent(this, com.parse.mealspotting.NewMealActivity.class);
+		startActivity(i);
+		}
+	
+	
+	
+	
 	public void onBtnOpenRegister(View view)
 		{
 		//Toaster.toast("Test");
@@ -106,17 +136,18 @@ public class DebugLauncher extends Activity
 	public void onBtnCreateUser(View view)
 		{
 		final ParseUser user = new ParseUser();
-		user.setUsername("Joe");
+		user.setUsername("Joe22");
 		user.setPassword("mypass");
-		user.setEmail("joe@example.com");
+		user.setEmail("joe3@example.com");
 
 		// other fields can be set just like with ParseObject
 		user.put("phone", "650-555-0000");
-
+		Toaster.showIndeterminate(this);
 		user.signUpInBackground(new SignUpCallback()
 		{
 			public void done(ParseException e)
 				{
+				Toaster.hideIndeterminate();
 				if (e == null)
 					{
 					int a = 5;
@@ -139,14 +170,17 @@ public class DebugLauncher extends Activity
 		}
 
 	public void onBtnLoginUser(View view)
-		{
+		{ 
+		Toaster.showIndeterminate(this);
 		ParseUser.logInInBackground("Joe", "mypass", new LogInCallback()
 		{
 			public void done(ParseUser user, ParseException e)
 				{
+				Toaster.hideIndeterminate();
 				if (user != null)
 					{
-					Toast.makeText(getApplicationContext(), "Logged in: ",
+					Toast.makeText(getApplicationContext(), "Logged in: " +
+					 ParseUser.getCurrentUser().getEmail(),
 							Toast.LENGTH_SHORT).show();
 					}
 				else

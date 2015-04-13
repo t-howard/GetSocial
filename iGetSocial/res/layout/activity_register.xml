@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.getsocial.RegisterActivity" >
+    tools:context="com.getsocial.activity.RegisterActivity" >
 
     <!-- Login progress -->
 
@@ -20,113 +20,113 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
-    <ScrollView
-        android:id="@+id/login_form"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+ <ScrollView
+     android:id="@+id/login_form"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical" >
 
-            <ImageView
-                android:id="@+id/btn_upload_photo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/header_register1" />
+         <ImageView
+             android:id="@+id/btn_upload_photo"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/header_register1" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#96CCCC"
-                android:orientation="vertical" 
-                >
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:background="#96CCCC"
+             android:orientation="vertical" >
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                   
-                    android:orientation="vertical" 
-                    android:layout_margin="25dp">
-<ImageView
-                android:id="@+id/btn_upload_photo2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/btn_upload_photo" />
-<EditText
-                        android:id="@+id/txtFirstName"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                         android:layout_marginTop="5dp"
-                        android:hint="First Name"
-                        android:imeActionId="@+id/login"
-                        android:imeActionLabel="@string/action_sign_in_short"
-                        android:imeOptions="actionUnspecified"
-                      
-                        android:maxLines="1"
-                        android:singleLine="true"
-                         android:textSize="20sp"
-                        android:background="#f1f1f1" />
-                    <AutoCompleteTextView
-                        android:id="@+id/email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                         android:layout_marginTop="5dp"
-                        android:hint="@string/prompt_email"
-                        android:inputType="textEmailAddress"
-                        android:maxLines="1"
-                        android:singleLine="true" 
-                        android:textSize="20sp"
-                        android:background="#f1f1f1"/>
+             <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_margin="25dp"
+                 android:orientation="vertical" >
 
-                    <EditText
-                        android:id="@+id/password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                         android:layout_marginTop="5dp"
-                        android:hint="Password"
-                        android:imeActionId="@+id/login"
-                        android:imeActionLabel="@string/action_sign_in_short"
-                        android:imeOptions="actionUnspecified"
-                        android:inputType="textPassword"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                         android:textSize="20sp"
-                        android:background="#f1f1f1" />
-                    
-                     <EditText
-                        android:id="@+id/passwordConfirm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:hint="Confirm Password"
-                        android:imeActionId="@+id/login"
-                        android:imeActionLabel="@string/action_sign_in_short"
-                        android:imeOptions="actionUnspecified"
-                        android:inputType="textPassword"
-                        android:maxLines="1"
-                        android:singleLine="true"
-                         android:textSize="20sp"
-                        android:background="#f1f1f1" />
+                 <ImageView
+                     android:id="@+id/btn_upload_photo2"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:src="@drawable/btn_upload_photo" />
 
-                     <ImageButton
-                         android:id="@+id/imageButton1"
-                         android:layout_width="wrap_content"
-                         android:layout_height="wrap_content"
-                         android:src="@drawable/btn_getsocializing" />
+                 <EditText
+                     android:id="@+id/txtFirstName"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="5dp"
+                     android:background="#f1f1f1"
+                     android:hint="First Name"
+                     android:imeActionId="@+id/login"
+                     android:imeActionLabel="@string/action_sign_in_short"
+                     android:imeOptions="actionUnspecified"
+                     android:maxLines="1"
+                     android:singleLine="true"
+                     android:textSize="20sp" />
 
-                    <Button
-                        android:id="@+id/email_sign_in_button"
-                        style="?android:textAppearanceSmall"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:text="I have a login already"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
-    </ScrollView>
+                 <AutoCompleteTextView
+                     android:id="@+id/email"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="5dp"
+                     android:background="#f1f1f1"
+                     android:hint="@string/prompt_email"
+                     android:inputType="textEmailAddress"
+                     android:maxLines="1"
+                     android:singleLine="true"
+                     android:textSize="20sp" />
+
+                 <EditText
+                     android:id="@+id/password"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="5dp"
+                     android:background="#f1f1f1"
+                     android:hint="Password"
+                     android:imeActionId="@+id/login"
+                     android:imeActionLabel="@string/action_sign_in_short"
+                     android:imeOptions="actionUnspecified"
+                     android:inputType="textPassword"
+                     android:maxLines="1"
+                     android:singleLine="true"
+                     android:textSize="20sp" />
+
+                 <EditText
+                     android:id="@+id/passwordConfirm"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="5dp"
+                     android:background="#f1f1f1"
+                     android:hint="Confirm Password"
+                     android:imeActionId="@+id/login"
+                     android:imeActionLabel="@string/action_sign_in_short"
+                     android:imeOptions="actionUnspecified"
+                     android:inputType="textPassword"
+                     android:maxLines="1"
+                     android:singleLine="true"
+                     android:textSize="20sp" />
+
+                 <ImageButton
+                     android:id="@+id/email_sign_in_button"
+                     android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"
+                     android:src="@drawable/btn_getsocializing" />
+
+                 <Button
+                     android:id="@+id/btnGoToLogin"
+                     style="?android:textAppearanceSmall"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="16dp"
+                     android:text="I have a login already"
+                     android:textStyle="bold" />
+             </LinearLayout>
+         </LinearLayout>
+     </LinearLayout>
+ </ScrollView>
 
 </LinearLayout>

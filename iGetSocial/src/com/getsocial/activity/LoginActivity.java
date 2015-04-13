@@ -1,4 +1,4 @@
-package com.getsocial;
+package com.getsocial.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -11,7 +11,6 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.AsyncTask;
-
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -24,9 +23,16 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import com.getsocial.R;
+import com.getsocial.R.id;
+import com.getsocial.R.layout;
+import com.getsocial.R.string;
 
 /**
  * A login screen that offers login via email/password.
@@ -79,7 +85,7 @@ public class LoginActivity extends Activity implements
 						}
 				});
 
-		Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+		ImageButton mEmailSignInButton = (ImageButton) findViewById(R.id.email_sign_in_button);
 		mEmailSignInButton.setOnClickListener(new OnClickListener()
 		{
 			@Override

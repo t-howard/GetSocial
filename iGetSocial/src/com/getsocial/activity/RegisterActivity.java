@@ -1,4 +1,4 @@
-package com.getsocial;
+package com.getsocial.activity;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
 import android.content.ContentResolver;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -24,10 +25,16 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import com.getsocial.R;
+import com.getsocial.R.id;
+import com.getsocial.R.layout;
+import com.getsocial.R.string;
 
 /**
  * A login screen that offers login via email/password.
@@ -81,7 +88,7 @@ public class RegisterActivity extends Activity implements
 						}
 				});
 
-		Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+		ImageButton mEmailSignInButton = (ImageButton) findViewById(R.id.email_sign_in_button);
 		mEmailSignInButton.setOnClickListener(new OnClickListener()
 		{
 			@Override
@@ -93,6 +100,12 @@ public class RegisterActivity extends Activity implements
 
 		mLoginFormView = findViewById(R.id.login_form);
 		mProgressView = findViewById(R.id.login_progress);
+		}
+
+	public void btnGoToLogin(View v)
+		{
+		Intent i = new Intent(this, LoginActivity.class);
+		startActivity(i);
 		}
 
 	private void populateAutoComplete()
@@ -170,7 +183,7 @@ public class RegisterActivity extends Activity implements
 	private boolean isPasswordValid(String password)
 		{
 		// TODO: Replace this with your own logic
-		return password.length() > 4;
+		return password.length() >= 3;
 		}
 
 	/**
@@ -336,6 +349,9 @@ public class RegisterActivity extends Activity implements
 			if (success)
 				{
 				finish();
+				Intent i = new Intent(RegisterActivity.this,
+						ColorTest1Activity.class);
+				startActivity(i);
 				}
 			else
 				{

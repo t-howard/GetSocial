@@ -1,6 +1,12 @@
-package com.getsocial;
+package com.getsocial.activity;
 
+import com.getsocial.NavigationDrawerFragment;
 import com.getsocial.R;
+import com.getsocial.NavigationDrawerFragment.NavigationDrawerCallbacks;
+import com.getsocial.R.id;
+import com.getsocial.R.layout;
+import com.getsocial.R.menu;
+import com.getsocial.R.string;
 
 import android.app.Activity;
 import android.app.ActionBar;

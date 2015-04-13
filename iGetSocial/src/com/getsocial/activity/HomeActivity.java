@@ -1,8 +1,12 @@
-package com.getsocial;
+package com.getsocial.activity;
 
 import java.util.Locale;
 
 import com.getsocial.R;
+import com.getsocial.R.id;
+import com.getsocial.R.layout;
+import com.getsocial.R.menu;
+import com.getsocial.R.string;
 
 import android.app.Activity;
 import android.app.ActionBar;
