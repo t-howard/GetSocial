@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+       android:id="@+id/bottomBar"
+        style="@android:style/ButtonBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center" 
+         android:background="@android:color/white"
+      >
+ 
+    <Button
+        android:id="@+id/btnHome"
+        style="@android:style/Holo.ButtonBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_btn_home_grey"
+        android:onClick="tlbHome"
+        android:text="Home"
+        android:textSize="11sp" />
+
+    <Button
+        android:id="@+id/btnWallet"
+        style="@android:style/Holo.ButtonBar"
+        android:onClick="tlbWallet"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_btn_wallet_grey"
+        android:text="Wallet"
+        android:textSize="11sp" />
+
+    <Button
+        android:id="@+id/btnOffers"
+        style="@android:style/Holo.ButtonBar"
+        android:onClick="tlbOffers"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_btn_offers_grey"
+        android:text="Offers"
+        android:textSize="11sp" />
+
+    <Button
+        android:id="@+id/btnCharities"
+        style="@android:style/Holo.ButtonBar"
+        android:onClick="tlbCharities"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_btn_charities_grey"
+        android:text="Charities"
+        android:textSize="11sp" />
+
+    <Button
+        android:id="@+id/btnMerchants"
+        style="@android:style/Holo.ButtonBar"
+        android:onClick="tlbMerchants"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/ic_btn_merchants_grey"
+        android:text="Merchants"
+        android:textSize="11sp" />
+
+</LinearLayout>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/tb1"
+                style="@android:style/Holo.ButtonBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="20sp" >
+
+                <Button
+                    android:id="@+id/btnHome"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_home_grey"
+                    android:onClick="tlbHome"
+                    android:text="Home"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnWallet"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_wallet"
+                    android:onClick="tlbWallet"
+                    android:text="Wallet"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnOffers"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_offers"
+                    android:onClick="tlbOffers"
+                    android:text="Offers"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnCharities"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_charities"
+                    android:onClick="tlbCharities"
+                    android:text="Charities"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnMerchants"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_merchants_grey"
+                    android:onClick="tlbMerchants"
+                    android:text="Merchants"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tb2"
+                style="@android:style/Holo.ButtonBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="20sp" >
+
+                <Button
+                    android:id="@+id/btnHome1"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_home_grey"
+                    android:onClick="tlbHome"
+                    android:text="Home"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnWallet1"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_wallet"
+                    android:onClick="tlbWallet"
+                    android:text="Wallet"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnOffers11"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_offers"
+                    android:onClick="tlbOffers"
+                    android:text="Offers"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnCharities32"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_charities"
+                    android:onClick="tlbCharities"
+                    android:text="Charities"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnMerchants54"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_merchants_grey"
+                    android:onClick="tlbMerchants"
+                    android:text="Merchants"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tb3"
+                style="@android:style/Holo.ButtonBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="20sp" >
+
+                <Button
+                    android:id="@+id/btnHome23"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_home_grey"
+                    android:onClick="tlbHome"
+                    android:text="Home"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnWallet32"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_wallet"
+                    android:onClick="tlbWallet"
+                    android:text="Wallet"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnOffers4"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_offers"
+                    android:onClick="tlbOffers"
+                    android:text="Offers"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnCharities4"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_charities"
+                    android:onClick="tlbCharities"
+                    android:text="Charities"
+                    android:textSize="11sp" />
+
+                <Button
+                    android:id="@+id/btnMerchants4"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_merchants_grey"
+                    android:onClick="tlbMerchants"
+                    android:text="Merchants"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dip"
+                android:paddingTop="20dip"
+                android:text="CDS UIL Sandbox"
+                android:textSize="24sp" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:onClick="onImageListClick"
+                android:text="Image List"
+                android:visibility="visible" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:onClick="onImageGridClick"
+                android:text="Image Grid"
+                android:visibility="visible" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:onClick="onImagePagerClick"
+                android:text="Image Pager"
+                android:visibility="visible" />
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dip"
+                android:onClick="onImageGalleryClick"
+                android:text="Image Gallery"
+                android:visibility="visible" />
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/inc_bottombar" />
+
+</RelativeLayout>

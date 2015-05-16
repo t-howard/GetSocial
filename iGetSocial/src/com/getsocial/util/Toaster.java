@@ -19,7 +19,22 @@ public class Toaster
 		Toast.makeText(GetSocialApplication.getInstance(), s,
 				Toast.LENGTH_SHORT).show();
 		}
+	public static void notify(String s)
+		{
+		new AlertDialog.Builder(GetSocialApplication.getInstance()).setTitle("Notice").setMessage(s)
+				.setNeutralButton("Got it", null).show();
+		}
 
+	public static void showIndeterminate()
+		{
+		pd = new ProgressDialog(GetSocialApplication.getInstance());
+		pd.setTitle("Processing...");
+		pd.setMessage("Please wait.");
+		pd.setCancelable(false);
+		pd.setIndeterminate(true);
+		pd.show();
+
+		}
 	public static void notify(Context ctxt, String s)
 		{
 		new AlertDialog.Builder(ctxt).setTitle("Notice").setMessage(s)

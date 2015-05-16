@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <ListView
+            android:id="@+id/offersList"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp" 
+            />
+        
+        <com.google.android.gms.maps.MapView
+            android:id="@+id/mapOffers"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".6"
+            android:visibility="invisible"
+             
+              />
+<!--  
+
+<com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="85dp"
+        android:layout_marginTop="85dp" />
+        
+        <fragment
+            android:id="@+id/mapOffers"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight=".6"
+            class="com.google.android.gms.maps.MapFragment"
+            android:visibility="invisible" /> -->
+        <!--
+        <Button
+            android:id="@+id/Button01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="803dp"
+            android:layout_y="84dp"
+            android:onClick="btnAirport"
+            android:text="Near Daphnes"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_x="810dp"
+            android:layout_y="15dp"
+            android:onClick="btnZK"
+            android:text="Near Swamis"
+            android:visibility="invisible" 
+            
+            
+            />
+
+        -->
+    </LinearLayout>
+
+</RelativeLayout>

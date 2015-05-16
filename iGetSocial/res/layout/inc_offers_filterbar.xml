@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/filterBar"
+    style="@android:style/ButtonBar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:background="@android:color/white"
+    android:gravity="top"
+    >
+
+    <!-- style="@android:style/Holo.ButtonBar" -->
+
+    <Button
+        android:id="@+id/btnFilter"
+        style="@android:style/Holo.ButtonBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="btnFilter"
+        android:text="Filter"
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/txtFilterSearchText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:hint="Enter Search Text"
+        android:imeOptions="actionSearch|flagNoEnterAction"
+        android:textSize="18dp" />
+
+    <ImageButton
+        android:id="@+id/btnMapListSwitch"
+        style="@android:style/Holo.ButtonBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:src="@drawable/ic_map_mode" />
+
+</LinearLayout>

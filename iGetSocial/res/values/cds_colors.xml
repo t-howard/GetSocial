@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="cds_red">#800000</color>
+    <color name="cds_green">#008000</color>
+    <color name="cds_blue">#0000f0</color>
+    <color name="cds_yellow">#ffff00</color>
+    <color name="cds_brown">#8b7500</color>
+    <color name="cds_purple">#7a378b</color>
+    <color name="cds_configheaderbg">#000000</color>
+    <color name="cds_configheaderfg">#ffff00</color>
+    <color name="cds_configsubheaderbg">#505050</color>
+    <color name="cds_configsubheaderfg">#ffffff</color>
+    <color name="cds_ltyellow">#ffffbd</color>
+    <color name="cds_ltpurple">#d7c1ff</color>
+    <color name="cds_white">#ffffff</color>
+    <color name="cds_dkgray">#505050</color>
+    <color name="cds_vlgray">#d0d0d0</color>
+    <color name="cds_black">#000000</color>
+  
+    
+    <!--  legacy zk colors -->    <color name="zkred">#800000</color>
+    <color name="zkgreen">#008000</color>
+    <color name="zkblue">#0000f0</color>
+    <color name="zkyellow">#ffff00</color>
+    <color name="zkbrown">#8b7500</color>
+    <color name="zkpurple">#7a378b</color>
+    <color name="zkconfigheaderbg">#000000</color>
+    <color name="zkconfigheaderfg">#ffff00</color>
+    <color name="zkconfigsubheaderbg">#505050</color>
+    <color name="zkconfigsubheaderfg">#ffffff</color>
+    <color name="zkltyellow">#ffffbd</color>
+    <color name="zkltpurple">#d7c1ff</color>
+    <color name="zkwhite">#ffffff</color>
+    <color name="zkdkgray">#505050</color>
+    <color name="zkvlgray">#d0d0d0</color>
+    <color name="zkblack">#000000</color>
+    <color name="my_custom_color">#ff1a557c</color>
+
+</resources>

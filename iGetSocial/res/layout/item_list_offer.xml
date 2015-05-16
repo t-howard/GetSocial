@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="72dip"
+        android:layout_height="72dip"
+        android:layout_margin="3dip"
+        android:adjustViewBounds="true"
+        android:contentDescription="Content Description"
+        android:scaleType="centerCrop"
+        android:src="@color/cds_blue" />
+ 
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txtTitle1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="20dip"
+            android:text="Title 1"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/txtTitle2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="20dip"
+            android:text="Title 2"
+            android:textSize="22dp" />
+
+        <LinearLayout
+         
+        
+            style="@android:style/ButtonBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="20sp"
+            android:background="@android:color/white"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/txtLocationsDistance"
+                style="@android:style/Holo.ButtonBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="7 locations"
+                android:textSize="11dp" />
+
+            <TextView
+                android:id="@+id/txtDonation"
+                style="@android:style/Holo.ButtonBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="5% donation"
+                android:textSize="11dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

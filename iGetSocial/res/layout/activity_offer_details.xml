@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="10dip"
+                android:paddingTop="20dip"
+                android:text="CDS UIL Sandbox"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="fill_parent"
+                android:layout_height="120dip"
+                android:scaleType="fitCenter"
+                android:src="@drawable/gradient1" />
+
+            <LinearLayout
+                style="@android:style/Holo.ButtonBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="20sp" >
+
+                <Button
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Charity"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <Button
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="% to Charity"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@android:style/Holo.ButtonBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <Button
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Any Charity"
+                    android:textSize="18dp" />
+
+                <Button
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="20%"
+                    android:textSize="18dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@android:style/Holo.ButtonBar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="20sp" >
+
+                <Button
+                    android:id="@+id/btnOffers1"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_wallet_save_to"
+                    android:text="Save to Wallet"
+                    android:textSize="14dp" />
+
+                <Button
+                    android:id="@+id/btnCharities1"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableTop="@drawable/ic_btn_heart"
+                    android:text="Use Incentive"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingBottom="10dip"
+                android:paddingTop="20dip"
+                android:text="About this incentive"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingBottom="10dip"
+                android:paddingTop="5dip"
+                android:text="13 Gourment Pizza&apos;s on the menu and an award winning brewery with over 25 craft beers on tap. Perfect for an evening out or an afternoon meal."
+                android:textSize="10dp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingBottom="10dip"
+                android:paddingTop="20dip"
+                android:text="Fine Print"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:paddingBottom="10dip"
+                android:paddingTop="5dip"
+                android:text="Limit one per visit, per table. Not valid on happy hour specials or
+with any other offers. Valid on full
+price menu items."
+                android:textSize="10dp" />
+
+              <fragment
+                android:id="@+id/mapViewOfferDetails"
+                android:layout_width="match_parent"
+                android:layout_height="256dp" 
+              class="com.google.android.gms.maps.MapFragment" />   
+         
+
+
+             
+      <!--       <com.google.android.gms.maps.MapView
+                android:id="@+id/mapViewOfferDetails"
+                 android:apiKey="AIzaSyDyRnNMTqNtzdX3fIiIhAdD0cV3-s-CFUE"
+                android:layout_width="match_parent"
+                android:layout_height="256dp" >
+            </com.google.android.gms.maps.MapView> -->
+
+
+              
+
+
+                <LinearLayout
+                    android:id="@+id/tb2"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="20sp" >
+
+                    <Button
+                        android:id="@+id/btnHome1"
+                        style="@android:style/Holo.ButtonBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@android:drawable/ic_menu_directions"
+                        android:text="Directions"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tb3"
+                    style="@android:style/Holo.ButtonBar"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="20sp" >
+
+                    <Button
+                        android:id="@+id/btnHome2"
+                        style="@android:style/Holo.ButtonBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@*android:drawable/ic_jog_dial_answer"
+                        android:text="Call"
+                        android:textSize="14dp" />
+
+                    <Button
+                        android:id="@+id/btnMerchants2"
+                        style="@android:style/Holo.ButtonBar"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@*android:drawable/ic_menu_home"
+                        android:text="Website"
+                        android:textSize="14dp" />
+                </LinearLayout>
+
+                <Button
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dip"
+                    android:onClick="onImageGalleryClick"
+                    android:text="Image Gallery"
+                    android:visibility="visible" />
+   </LinearLayout>
+ 
+    </ScrollView>
+    <!-- <include layout="@layout/inc_bottombar" /> -->
+
+</RelativeLayout>
