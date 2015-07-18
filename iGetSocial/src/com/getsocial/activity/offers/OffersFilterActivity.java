@@ -1,4 +1,4 @@
-package com.cds.consumer.activities.offers;
+package com.getsocial.activity.offers;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -22,9 +22,10 @@ import android.widget.VideoView;
 
 
 
+
 import org.json.JSONObject;
 
-import com.cds.consumer.BaseActivity;
+import com.getsocial.BaseActivity;
 import com.getsocial.R;
 
 

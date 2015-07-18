@@ -1,9 +1,15 @@
-package com.cds.consumer.database.mock;
+package com.getsocial.database.mock;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cds.consumer.model.proto.*;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+import com.getsocial.model.proto.Charity;
+import com.getsocial.model.proto.GSUser;
+import com.getsocial.model.proto.Merchant;
+import com.getsocial.model.proto.Offer;
+import com.getsocial.model.proto.Venue;
 import com.google.android.gms.maps.model.LatLng;
 
 public class MockDBHelper
@@ -11,6 +17,7 @@ public class MockDBHelper
 
 	static public MockDB mockDB = MockDB.getInstance();
 
+	public List<GSUser> allUsers = mockDB.getAllUsers();
 	public List<Venue> allVenues = mockDB.getAllVenues();
 	public List<Charity> allCharities = mockDB.getAllCharities();
 	public List<Merchant> allMerchants = mockDB.getAllMerchants();
@@ -24,6 +31,92 @@ public class MockDBHelper
 	Charity _charity;
 	Offer _offer;
 
+	void buildMockUsers()
+		{
+
+		String defaultMerchantIconUrl = "http://mycodeandlife.files.wordpress.com/2013/01/384088_2317070728022_2086719259_n.jpg";
+		String defaultCharityIconUrl = defaultMerchantIconUrl;
+
+		// Uri uri = Uri.parse("android.resource://com.example/" +
+		// R.drawable.image); –
+
+		// file:///android_asset/..
+
+		GSUser gsu;
+
+		gsu = new GSUser();
+
+		gsu.firstName = "Guy";
+		gsu.interest1 = "Rock Climbing";
+		gsu.interest2 = "Swing Dancing";
+		gsu.iconUrl = "https://pbs.twimg.com/profile_images/375889332/guy2.0_bigger.jpg";
+		gsu.upForUrl = "assets://gs_icons/icon_chat.png";
+		gsu.latLng = new LatLng(34.145206, -118.116736);
+
+		allUsers.add(gsu);
+
+		gsu = new GSUser();
+
+		gsu.firstName = "Katie";
+		gsu.interest1 = "Rock Climbing";
+		gsu.interest2 = "Swing Dancing";
+		gsu.iconUrl = "https://pbs.twimg.com/profile_images/520671572441694208/2xPnywhR.jpeg";
+		gsu.upForUrl = "assets://gs_icons/icon_coffee.png";
+		gsu.latLng = new LatLng(34.145289, -118.116706);
+
+		allUsers.add(gsu);
+		
+		gsu = new GSUser();
+
+		gsu.firstName = "Cindy";
+		gsu.interest1 = "Rock Climbing";
+		gsu.interest2 = "Swing Dancing";
+		gsu.iconUrl = "https://pbs.twimg.com/profile_images/495298098076614657/OHKjKjSs_400x400.jpeg";
+		gsu.latLng = new LatLng(34.145352, -118.116943);
+		gsu.upForUrl = "assets://gs_icons/icon_drinks.png";
+		allUsers.add(gsu);
+
+		gsu = new GSUser();
+
+		gsu.firstName = "Scott";
+		gsu.interest1 = "Rock Climbing";
+		gsu.interest2 = "Swing Dancing";
+		gsu.iconUrl = "https://pbs.twimg.com/profile_images/459455847165218816/I_sH-zvU_400x400.jpeg";
+		gsu.latLng = new LatLng(34.145258, -118.116935);
+		gsu.upForUrl = "assets://gs_icons/icon_food.png";	
+		allUsers.add(gsu);
+		 
+		
+		gsu = new GSUser();
+
+		gsu.firstName = "Rocky";
+		gsu.interest1 = "Rock Climbing";
+		gsu.interest2 = "Swing Dancing";
+		gsu.upForUrl = "assets://gs_icons/icon_food.png";	
+		allUsers.add(gsu);
+		
+		gsu = new GSUser();
+
+		gsu.firstName = "Biff";
+		gsu.interest1 = "Rock Climbing";
+		gsu.interest2 = "Swing Dancing";
+
+		gsu.upForUrl = "assets://gs_icons/icon_coffee.png";	
+		allUsers.add(gsu);
+		
+		gsu = new GSUser();
+
+		gsu.firstName = "Sloan";
+		gsu.interest1 = "Rock Climbing";
+		gsu.interest2 = "Swing Dancing";
+
+		gsu.upForUrl = "assets://gs_icons/icon_coffee.png";	
+		allUsers.add(gsu);
+		// http://www.pasadena.edu/athletics/images/lancer-sm.gif   generic icon
+		//  use this lat and long
+
+		//34.145124, -118.116929
+		}
 	void buildMockMerchants()
 		{
 
@@ -40,8 +133,8 @@ public class MockDBHelper
 		_merchant.id = _merchantId++;
 		_merchant.name = "Any Merchant";
 		_merchant.iconUrl = defaultMerchantIconUrl;
-		//allMerchants.add(_merchant);  SKIP this one
-		
+		// allMerchants.add(_merchant); SKIP this one
+
 		// --------------------- Encinitas Pizza Company ID=2
 
 		_merchant = new Merchant();
@@ -49,7 +142,7 @@ public class MockDBHelper
 		_merchant.id = _merchantId++;
 		_merchant.name = "Encinitas Pizza Company";
 		_merchant.iconUrl = getMerchantUrl("encinitaspizzalogo.jpg");
-		
+
 		_venue = new Venue();
 		_venue.id = _venueId++;
 		_venue.parentMerchant = _merchant;
@@ -69,7 +162,6 @@ public class MockDBHelper
 		_merchant.nearestVenues.add(_venue);
 
 		allMerchants.add(_merchant);
-		
 
 		// ==========================================
 
@@ -139,7 +231,7 @@ public class MockDBHelper
 		_venue.state = "CA";
 		_venue.zipCode = "92009"; // might be wrong
 		_venue.phoneNumber = "(760) 929-0875";
-		_venue.iconUrl =  getMerchantUrl("daphne_logo.jpg");
+		_venue.iconUrl = getMerchantUrl("daphne_logo.jpg");
 		_venue.latLng = new LatLng(33.102829, -117.267012);
 		_venue.websiteUrl = "http://daphnesgreekcafe.com";
 		_merchant.nearestVenue = _venue;
@@ -151,6 +243,8 @@ public class MockDBHelper
 		// ==========================================
 
 		}
+
+
 
 	void buildMockCharities()
 		{
@@ -168,7 +262,7 @@ public class MockDBHelper
 		_charity.id = _charityId++;
 		_charity.name = "Any Charity";
 		_charity.iconUrl = defaultCharityIconUrl;
-		//allCharities.add(_charity);
+		// allCharities.add(_charity);
 
 		// --------------------- Save the Whales ID=2
 
@@ -229,13 +323,12 @@ public class MockDBHelper
 		_charity.iconUrl = getCharityUrl("bsalogo.jpg");
 		_charity.latLng = new LatLng(33.103673, -117.266195);
 		_charity.websiteUrl = "http://www.bsatroop776.org/";
- 
+
 		allCharities.add(_charity);
 		mockDB.getMyCharities().add(_charity);
-	
 
 		// ==========================================
- 
+
 		// --------------------- Susan Komen 5
 
 		_charity = new Charity();
@@ -262,6 +355,11 @@ public class MockDBHelper
 
 		}
 
+	public String getUpForUrl(String assetName)
+		{
+		return "assets://upfor_icons/" + assetName;
+		}
+
 	public String getCharityUrl(String assetName)
 		{
 		return "assets://charity_icons/" + assetName;
@@ -277,7 +375,7 @@ public class MockDBHelper
 	void buildMockOffers()
 		{
 
-		// Encinitas pizza = 2, Subway 3  , daphnes = 4
+		// Encinitas pizza = 2, Subway 3 , daphnes = 4
 		// Save the whales = 2, BSA = 2 and 4, Susan Komen =5
 
 		_offer = new Offer();
@@ -293,8 +391,7 @@ public class MockDBHelper
 		mockDB.getOffersMyCharities().add(_offer);
 		mockDB.getOffersFeatured().add(_offer);
 		mockDB.getOffersMyMerchants().add(_offer);
-		
-		
+
 		_offer = new Offer();
 		_offer.id = _offerId++;
 		_offer.title = "Monday Special";
@@ -306,9 +403,9 @@ public class MockDBHelper
 		mockDB.getAllOffers().add(_offer);
 		mockDB.getMyOffers().add(_offer);
 		mockDB.getOffersMyCharities().add(_offer);
-		mockDB.getOffersFeatured().add(_offer); 
+		mockDB.getOffersFeatured().add(_offer);
 		mockDB.getOffersMyMerchants().add(_offer);
-		
+
 		_offer = new Offer();
 		_offer.id = _offerId++;
 		_offer.title = "Tuesday Special";
@@ -320,7 +417,7 @@ public class MockDBHelper
 		mockDB.getAllOffers().add(_offer);
 		mockDB.getOffersMyCharities().add(_offer);
 		mockDB.getOffersFeatured().add(_offer);
-		
+
 		_offer = new Offer();
 		_offer.id = _offerId++;
 		_offer.title = "Charity Night";
@@ -331,20 +428,19 @@ public class MockDBHelper
 		_offer.charity = null;
 		mockDB.getOffersMyCharities().add(_offer);
 		mockDB.getOffersFeatured().add(_offer);
-		
+
 		mockDB.getAllOffers().add(_offer);
-		
-		mockDB.getAllOffers().add(_offer);
-		mockDB.getAllOffers().add(_offer);
+
 		mockDB.getAllOffers().add(_offer);
 		mockDB.getAllOffers().add(_offer);
 		mockDB.getAllOffers().add(_offer);
 		mockDB.getAllOffers().add(_offer);
 		mockDB.getAllOffers().add(_offer);
-		mockDB.getAllOffers().add(_offer); 
-		
-		//_offer.iconUrl = 
-		
+		mockDB.getAllOffers().add(_offer);
+		mockDB.getAllOffers().add(_offer);
+		mockDB.getAllOffers().add(_offer);
+
+		// _offer.iconUrl =
 
 		}
 

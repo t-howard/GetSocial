@@ -1,4 +1,4 @@
-package com.cds.consumer;
+package com.getsocial;
 
 public class FooTst
 	{

@@ -4,6 +4,7 @@ import com.getsocial.R;
 import com.getsocial.R.id;
 import com.getsocial.R.layout;
 import com.getsocial.R.menu;
+import com.getsocial.activity.offers.PeopleMatchActivity;
 import com.getsocial.util.Toaster;
 import com.parse.LogInCallback;
 import com.parse.ParseException;
@@ -87,6 +88,9 @@ public class DebugLauncher extends Activity
 	public boolean onCreateOptionsMenu(Menu menu)
 		{
 		// Inflate the menu; this adds items to the action bar if it is present.
+		 
+		
+		 
 		getMenuInflater().inflate(R.menu.simple, menu);
 		return true;
 		}
@@ -131,6 +135,11 @@ public class DebugLauncher extends Activity
 		//Toaster.toast("Test");
 		//Toaster.notify(this, "User Created");
 		Intent i = new Intent(this, LoginActivity.class);
+		startActivity(i);
+		}
+	public void onBtnOpenHomeView(View v)
+		{
+		Intent i = new Intent(this, PeopleMatchActivity.class);
 		startActivity(i);
 		}
 	public void onBtnCreateUser(View view)

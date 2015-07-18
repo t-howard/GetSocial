@@ -1,4 +1,4 @@
-package com.cds.consumer.model.proto;
+package com.getsocial.model.proto;
 
 import java.util.ArrayList;
 import java.util.List;

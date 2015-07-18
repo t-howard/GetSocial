@@ -5,4 +5,4 @@
  * @author AirJordan
  *
  */
-package com.cds.consumer.activities.offers;
+package com.getsocial.activity.offers;

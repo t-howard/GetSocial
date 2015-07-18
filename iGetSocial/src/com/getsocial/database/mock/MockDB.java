@@ -1,5 +1,5 @@
-package com.cds.consumer.database.mock;
-
+package com.getsocial.database.mock;
+  
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -7,7 +7,11 @@ import java.util.List;
 import java.util.Vector;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-import com.cds.consumer.model.proto.*;
+import com.getsocial.model.proto.Charity;
+import com.getsocial.model.proto.GSUser;
+import com.getsocial.model.proto.Merchant;
+import com.getsocial.model.proto.Offer;
+import com.getsocial.model.proto.Venue;
 import com.google.android.gms.maps.model.LatLng;
 
 public class MockDB
@@ -15,10 +19,6 @@ public class MockDB
 
 	static public MockDB instance = new MockDB();
 
-	
-
-	// static final List<String> displayedImages = Collections
-	// .synchronizedList(new LinkedList<String>());
 	public List<Venue> getAllVenues()
 		{
 		return allVenues;
@@ -58,6 +58,8 @@ public class MockDB
 		{
 		this.allOffers = allOffers;
 		}
+
+	private List<GSUser> allUsers = new CopyOnWriteArrayList<GSUser>();
 	private List<Venue> allVenues = new CopyOnWriteArrayList<Venue>();
 	private List<Charity> allCharities = new CopyOnWriteArrayList<Charity>();
 	private List<Merchant> allMerchants = new CopyOnWriteArrayList<Merchant>();
@@ -65,11 +67,16 @@ public class MockDB
 	private List<Offer> myOffers = new CopyOnWriteArrayList<Offer>();
 	private List<Charity> myCharities = new CopyOnWriteArrayList<Charity>();
 	private List<Merchant> myMerchants = new CopyOnWriteArrayList<Merchant>();
-	
+
 	private List<Offer> offersMyCharities = new CopyOnWriteArrayList<Offer>();
 	private List<Offer> offersMyMerchants = new CopyOnWriteArrayList<Offer>();
-	private List<Offer> offersFeatured =  new CopyOnWriteArrayList<Offer>();
-	
+	private List<Offer> offersFeatured = new CopyOnWriteArrayList<Offer>();
+
+	public List<GSUser> getAllUsers()
+		{
+		return allUsers;
+		}
+
 	public List<Offer> getMyOffers()
 		{
 		return myOffers;
@@ -97,6 +104,7 @@ public class MockDB
 	public void buildMockDB()
 		{
 		MockDBHelper helper = new MockDBHelper();
+		helper.buildMockUsers();
 		helper.buildMockMerchants();
 		helper.buildMockCharities();
 		helper.buildMockOffers();
@@ -106,12 +114,12 @@ public class MockDB
 		{
 		return getAllVenues().get(id - 2);
 		}
-	
+
 	public Offer getOffer(int id)
 		{
 		return getAllOffers().get(id - 2);
 		}
-	
+
 	public Merchant getMerchant(int id)
 		{
 		return getAllMerchants().get(id - 2);
@@ -120,65 +128,58 @@ public class MockDB
 	public Charity getCharity(int id)
 		{
 		List<Charity> list = getAllCharities();
-		
+
 		return list.get(id - 2);
 		}
 
 	public List<Charity> getMyCharities()
 		{
-			return myCharities;
+		return myCharities;
 		}
 
 	private void setMyCharities(List<Charity> myCharities)
 		{
-			this.myCharities = myCharities;
+		this.myCharities = myCharities;
 		}
 
 	public List<Merchant> getMyMerchants()
 		{
-			return myMerchants;
+		return myMerchants;
 		}
 
 	private void setMyMerchants(List<Merchant> myMerchants)
 		{
-			this.myMerchants = myMerchants;
+		this.myMerchants = myMerchants;
 		}
 
 	public List<Offer> getOffersMyCharities()
 		{
-			return offersMyCharities;
+		return offersMyCharities;
 		}
 
 	public void setOffersMyCharities(List<Offer> offersMyCharities)
 		{
-			this.offersMyCharities = offersMyCharities;
+		this.offersMyCharities = offersMyCharities;
 		}
 
 	public List<Offer> getOffersMyMerchants()
 		{
-			return offersMyMerchants;
+		return offersMyMerchants;
 		}
 
 	public void setOffersMyMerchants(List<Offer> offersMyMerchants)
 		{
-			this.offersMyMerchants = offersMyMerchants;
+		this.offersMyMerchants = offersMyMerchants;
 		}
 
 	public List<Offer> getOffersFeatured()
 		{
-			return offersFeatured;
+		return offersFeatured;
 		}
 
 	public void setOffersFeatured(List<Offer> offersFeatured)
 		{
-			this.offersFeatured = offersFeatured;
+		this.offersFeatured = offersFeatured;
 		}
 
 	}
-
-/*
- * 
- * 
- * 
- * photoshop cs versus lightroom
- */

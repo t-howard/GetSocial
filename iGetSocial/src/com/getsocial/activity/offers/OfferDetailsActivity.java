@@ -1,4 +1,4 @@
-package com.cds.consumer.activities.offers;
+package com.getsocial.activity.offers;
 
 import java.util.List;
 import java.util.Properties;
@@ -7,8 +7,11 @@ import android.app.Fragment;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import com.getsocial.GSApp;
 import com.getsocial.R;
 import com.getsocial.example.universalimageloader.Constants.Extra;
+import com.getsocial.model.proto.Offer;
+import com.getsocial.model.proto.Venue;
 
 import android.os.Bundle;
 import android.os.Parcelable;
@@ -21,8 +24,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.cds.consumer.model.proto.Offer;
-import com.cds.consumer.model.proto.Venue;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -42,7 +43,7 @@ import com.nostra13.universalimageloader.core.imageaware.ImageAware;
 import com.nostra13.universalimageloader.core.listener.SimpleImageLoadingListener;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 
-public class OfferDetailsActivity extends com.cds.consumer.BaseActivity
+public class OfferDetailsActivity extends com.getsocial.BaseActivity
 	{
 
 	private static final String STATE_POSITION = "STATE_POSITION";
@@ -68,7 +69,7 @@ public class OfferDetailsActivity extends com.cds.consumer.BaseActivity
 		
 
 		int id = bundle.getInt(Extra.CDSID, 0);
-		_offer = this._mockDB.getOffer(id);
+		_offer = this._mockDB.getAllOffers().get(1);
 		//ImageAware imageView;
 		//
 		//String[] imageUrls = bundle.getStringArray(Extra.IMAGES);
@@ -157,8 +158,10 @@ public class OfferDetailsActivity extends com.cds.consumer.BaseActivity
 		CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
 				//new LatLng(43.1, -87.9), 
 				//new LatLng(33.102903,-117.267123), // daphnes
-				_offer.merchant.nearestVenues.get(0).latLng,
-				12);   // was 10
+				//_offer.merchant.nearestVenues.get(0).latLng,
+				GSApp.getStartingMapLocation(),
+				GSApp.getStartingMapZoom());   // was 10
+		
 		map.animateCamera(cameraUpdate);
 		
 		}

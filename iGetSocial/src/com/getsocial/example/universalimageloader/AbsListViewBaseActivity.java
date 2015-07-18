@@ -28,7 +28,7 @@ import com.getsocial.R;
  * 
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  */
-public class AbsListViewBaseActivity extends com.cds.consumer.BaseActivity {
+public class AbsListViewBaseActivity extends com.getsocial.BaseActivity {
 
 	protected static final String STATE_PAUSE_ON_SCROLL = "STATE_PAUSE_ON_SCROLL";
 	protected static final String STATE_PAUSE_ON_FLING = "STATE_PAUSE_ON_FLING";

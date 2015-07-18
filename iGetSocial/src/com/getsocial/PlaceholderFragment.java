@@ -1,4 +1,4 @@
-package com.cds.consumer;
+package com.getsocial;
 import com.getsocial.R;
 import android.app.Fragment;
 import android.os.Bundle;

@@ -1,4 +1,4 @@
-package com.cds.consumer;
+package com.getsocial;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;

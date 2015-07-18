@@ -1,8 +1,8 @@
-package com.cds.consumer;
+package com.getsocial;
 
 import java.io.IOException;
-import com.cds.consumer.database.mock.MockDB;  
 
+import com.getsocial.database.mock.MockDB;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import android.app.Activity;
@@ -121,7 +121,11 @@ public class BaseActivity extends ProtoActivity
 	//	startActivity(i);
 		}
 	
-	 
+	public void tlbCharities(View v)
+		{
+	//	Intent i = new Intent(this, OffersActivity.class);
+	//	startActivity(i);
+		}
 	
   
  

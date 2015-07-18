@@ -1,4 +1,4 @@
-package com.cds.consumer.activities.offers;
+package com.getsocial.activity.offers;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.getsocial.GSApp;
 import com.getsocial.R;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.maps.CameraUpdate;
@@ -50,7 +51,8 @@ public class OffersNewMapFragment extends Fragment
 
 		// Updates the location and zoom of the MapView
 		CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
-				new LatLng(43.1, -87.9), 10);
+				GSApp.getStartingMapLocation(), 
+				GSApp.getStartingMapZoom());
 		map.animateCamera(cameraUpdate);
 
 		return v;

@@ -21,15 +21,18 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class ColorTest1Activity extends Activity
 	{
 
+	Button mBtnOK;
 	Button mBtnLeft;
 	Button mBtnMiddle;
 	Button mBtnRight;
-	
+	RelativeLayout mTransparency;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState)
 		{
@@ -39,13 +42,36 @@ public class ColorTest1Activity extends Activity
 		mBtnLeft = ((Button) findViewById(R.id.btnLeft));
 		mBtnMiddle = ((Button) findViewById(R.id.btnMiddle));
 		mBtnRight = ((Button) findViewById(R.id.btnRight));
-		
+		mBtnOK = ((Button) findViewById(R.id.btnOK));
+		mTransparency = ((RelativeLayout) findViewById(R.id.transparentOverlay));
 		mBtnLeft.setEnabled(false);
 		mBtnMiddle.setEnabled(false);
-		 
+
 		mBtnRight.setEnabled(false);
-		//saveButton.setOnClickListener(new View.OnClickListener()
-		 
+		// saveButton.setOnClickListener(new View.OnClickListener()
+
+		}
+
+	public  void onBtnOK(View v)
+		{
+		mBtnOK.setVisibility(View.INVISIBLE);
+		mTransparency.setVisibility(View.GONE);
+		mBtnLeft.setEnabled(true);
+		mBtnMiddle.setEnabled(true);
+		mBtnRight.setEnabled(true);
+		}
+	
+	public  void onBtnLeft(View v)
+		{
+		mBtnLeft.setVisibility(View.INVISIBLE);
+		}
+	public  void onBtnMiddle(View v)
+		{
+		mBtnMiddle.setVisibility(View.INVISIBLE);
+		}
+	public  void onBtnRight(View v)
+		{
+		mBtnRight.setVisibility(View.INVISIBLE);
 		}
 
 	@Override
@@ -58,13 +84,11 @@ public class ColorTest1Activity extends Activity
 
 	public void onBtnOpenRegister(View view)
 		{
-		//Toaster.toast("Test");
-		//Toaster.notify(this, "User Created");
+		// Toaster.toast("Test");
+		// Toaster.notify(this, "User Created");
 		Intent i = new Intent(this, RegisterActivity.class);
 		startActivity(i);
 		}
-
-	 
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)

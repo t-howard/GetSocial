@@ -36,7 +36,7 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  */
 @SuppressWarnings("deprecation")
-public class ImageGalleryActivity extends com.cds.consumer.BaseActivity  {
+public class ImageGalleryActivity extends com.getsocial.BaseActivity  {
 
 	String[] imageUrls;
 

@@ -8,6 +8,8 @@ import android.os.StrictMode;
 
 
  
+
+import com.getsocial.database.mock.MockDB;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -24,7 +26,7 @@ public class GetSocialApplication extends Application
 
 	public static GetSocialApplication getInstance()
 		{
-		return singleton;
+		return singleton; 
 		}
 	@TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	@SuppressWarnings("unused")
@@ -45,6 +47,8 @@ public class GetSocialApplication extends Application
 			StrictMode.setVmPolicy(new StrictMode.VmPolicy.Builder()
 					.detectAll().penaltyDeath().build());
 			}
+		super.onCreate();
+		MockDB.getInstance().buildMockDB();
 		initImageLoader(getApplicationContext());
 		/*
 		 * In this tutorial, we'll subclass ParseObject for convenience to

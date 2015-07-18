@@ -1,8 +1,8 @@
-package com.cds.consumer.activities.offers;
+package com.getsocial.activity.offers;
 
 import java.util.Properties;
 
-import com.cds.consumer.CDSApp;
+import com.getsocial.CDSApp;
 import com.getsocial.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;

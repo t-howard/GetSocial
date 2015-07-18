@@ -19,7 +19,8 @@
         android:layout_weight="1"
         android:onClick="btnFilter"
         android:text="Filter"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:visibility="gone" />
 
     <EditText
         android:id="@+id/txtFilterSearchText"
@@ -28,8 +29,18 @@
         android:layout_weight="3"
         android:hint="Enter Search Text"
         android:imeOptions="actionSearch|flagNoEnterAction"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:visibility="gone" />
 
+     <TextView
+      
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:hint="GetSocial Top Logo"
+        android:fontFeatureSettings="bold"
+        android:textSize="18dp"
+        />
     <ImageButton
         android:id="@+id/btnMapListSwitch"
         style="@android:style/Holo.ButtonBar"

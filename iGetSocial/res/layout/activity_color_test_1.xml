@@ -16,7 +16,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="wrap_content"
             android:background="#ffffff"
             android:orientation="vertical" >
 
@@ -30,6 +30,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="0dp"
                     android:layout_weight=".70"
+                    android:textSize="16sp"
                     android:text="Help us help you. This tested and proven personality test will set your personality profile" />
 
                 <ImageView
@@ -41,14 +42,14 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/btnMdiddle"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight=".33"
-                    android:background="#00ff00"
-                    android:text="center"
-                    />
+                android:id="@+id/btnOK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-10dp"
+                android:text="Got it!"
+                android:onClick="onBtnOK"
+                android:background="#ffffff"
+                 />
         </LinearLayout>
 
         <TextView
@@ -60,44 +61,57 @@
             android:textColor="#ffffff"
             android:textSize="16dp" />
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="160dp"
-            android:orientation="vertical" >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:orientation="vertical" >
 
-                <Button
-                    android:id="@+id/btnLeft"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight=".33"
-                    android:background="#ff0000"
-                    android:text="left" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
 
-                <Button
-                    android:id="@+id/btnMiddle"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight=".33"
-                    android:background="#00ff00"
-                    android:text="center" />
+                    <Button
+                        android:id="@+id/btnLeft"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight=".33"
+                        android:background="#ff0000"
+                        android:onClick="onBtnLeft"
+                        />
 
-                <Button
-                    android:id="@+id/btnRight"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_margin="10dp"
-                    android:layout_weight=".33"
-                    android:background="#0000ff"
-                    android:text="right" />
+                    <Button
+                        android:id="@+id/btnMiddle"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight=".33"
+                        android:background="#00ff00"
+                        android:onClick="onBtnMiddle"
+                         />
+
+                    <Button
+                        android:id="@+id/btnRight"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="10dp"
+                        android:layout_weight=".33"
+                        android:background="#0000ff"
+                        android:onClick="onBtnRight"
+                        android:text="right" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+            <RelativeLayout
+        android:id="@+id/transparentOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#66f0a0a0" />
+        </RelativeLayout>
     </LinearLayout>
 
 </RelativeLayout>

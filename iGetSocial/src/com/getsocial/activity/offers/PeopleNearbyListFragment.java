@@ -1,4 +1,4 @@
-package com.cds.consumer.activities.offers;
+package com.getsocial.activity.offers;
 
 import static com.getsocial.example.universalimageloader.Constants.IMAGES;
 
@@ -7,14 +7,16 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 
+import com.getsocial.GSApp;
 import com.getsocial.R;
+import com.getsocial.activity.offers.PeopleMatchActivity.SectionsPagerAdapter;
+import com.getsocial.database.mock.MockDB;
 import com.getsocial.example.universalimageloader.Constants;
 import com.getsocial.example.universalimageloader.ImagePagerActivity;
 import com.getsocial.example.universalimageloader.Constants.Extra;
-import com.cds.consumer.activities.offers.OffersActivity.SectionsPagerAdapter;
-import com.cds.consumer.database.mock.MockDB;
-import com.cds.consumer.model.proto.Offer;
-import com.cds.consumer.model.proto.Venue;
+import com.getsocial.model.proto.GSUser;
+import com.getsocial.model.proto.Offer;
+import com.getsocial.model.proto.Venue;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -66,7 +68,7 @@ import android.widget.AdapterView.OnItemClickListener;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class OffersNearbyListFragment extends Fragment
+public class PeopleNearbyListFragment extends Fragment
 	{
 	/**
 	 * The fragment argument representing the section number for this fragment.
@@ -76,11 +78,11 @@ public class OffersNearbyListFragment extends Fragment
 	/**
 	 * Returns a new instance of this fragment for the given section number.
 	 */
-	public static OffersNearbyListFragment newInstance(int sectionNumber)
+	public static PeopleNearbyListFragment newInstance(int sectionNumber)
 		{
 		Log.d("OffersNearbyListFragment", "Section Number " + sectionNumber);
 
-		OffersNearbyListFragment fragment = new OffersNearbyListFragment();
+		PeopleNearbyListFragment fragment = new PeopleNearbyListFragment();
 		Bundle args = new Bundle();
 		args.putInt(ARG_SECTION_NUMBER, sectionNumber);
 		fragment.setArguments(args);
@@ -94,11 +96,11 @@ public class OffersNearbyListFragment extends Fragment
 
 		}
 
-	public OffersNearbyListFragment()
+	public PeopleNearbyListFragment()
 		{
 		}
 
-	public List<Offer> offersList = null;
+	public List<GSUser> nearbyUsersList = null;
 
 	private MapView mapView;
 
@@ -148,26 +150,15 @@ public class OffersNearbyListFragment extends Fragment
 
 		switch (sectionNumber)
 			{
-			case 1:
-				offersList = MockDB.getInstance().getOffersFeatured();
-				break;
-			case 2:
-				offersList = MockDB.getInstance().getMyOffers();
-				break;
-			case 3:
-				offersList = MockDB.getInstance().getOffersMyCharities();
-				break;
-			case 4:
-				offersList = MockDB.getInstance().getOffersMyMerchants();
-				break;
+		 
 			default:
-				offersList = MockDB.getInstance().getAllOffers();
+				nearbyUsersList = MockDB.getInstance().getAllUsers();
 				break;
 
 			}
 		// offersList = MockDB.getInstance().getAllOffers();
-		((ListView) listView).setAdapter(new OfferItemArrayAdapter(this
-				.getActivity().getApplicationContext(), offersList
+		((ListView) listView).setAdapter(new PeopleItemArrayAdapter(this
+				.getActivity().getApplicationContext(), nearbyUsersList
 
 		));
 		// breaks
@@ -213,17 +204,17 @@ public class OffersNearbyListFragment extends Fragment
 			e.printStackTrace();
 			}
 
-		for (Offer ofr : offersList)
+		for (GSUser u : nearbyUsersList)
 			{
-			for (Venue vnu : ofr.merchant.nearestVenues)
-				{
-				map.addMarker(new MarkerOptions().position(vnu.latLng)
-						.title(ofr.merchant.name).snippet(ofr.title));
-				}
+			 
+				map.addMarker(new MarkerOptions().position(u.latLng)
+						.title(u.firstName).snippet(u.interest1 + " " + u.interest2));
+				
 			}
 		// Updates the location and zoom of the MapView
 		CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
-				new LatLng(33.102903, -117.267123), 10); // daphnes
+				GSApp.getStartingMapLocation(), 
+				GSApp.getStartingMapZoom()); 
 		map.animateCamera(cameraUpdate);
 
 		return rootView;
@@ -295,34 +286,38 @@ public class OffersNearbyListFragment extends Fragment
 
 	private void startImagePagerActivity(int position)
 		{
+		if (true)  // jordan this opened up the old details activity
+			return;
 		Intent intent = new Intent(getActivity(), OfferDetailsActivity.class);
-		Offer o = offersList.get(position);
+		GSUser o = nearbyUsersList.get(position);
 
 		intent.putExtra(Extra.CDSID, o.id);
 		startActivity(intent);
 		}
 
-	private class OfferItemArrayAdapter extends ArrayAdapter<Offer>
+	private class PeopleItemArrayAdapter extends ArrayAdapter<GSUser>
 		{
 		private final Context context;
-		private final List<Offer> offers;
+		private final List<GSUser> gsUsers;
 		private ImageLoadingListener animateFirstListener = new AnimateFirstDisplayListener();
 
-		private class OfferItemViewHolder
+		private class PeopleItemViewHolder
 			{
 			public TextView title;
 			public TextView title2;
+			public TextView txtName;
 			public TextView txtLocations;
 			public TextView txtPctToCharity;
 
 			public ImageView image;
+			public ImageView upForImage;
 			}
 
-		public OfferItemArrayAdapter(Context context, List<Offer> offers)
+		public PeopleItemArrayAdapter(Context context, List<GSUser> users)
 			{
-			super(context, R.layout.item_list_offer, offers);
+			super(context, R.layout.item_list_people_match, users);
 			this.context = context;
-			this.offers = offers;
+			this.gsUsers = users;
 			}
 
 		@Override
@@ -331,47 +326,54 @@ public class OffersNearbyListFragment extends Fragment
 			LayoutInflater inflater = (LayoutInflater) context
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE); // not
 																		// necessary?
-			View rowView = inflater.inflate(R.layout.item_list_offer, parent,
+			View rowView = inflater.inflate(R.layout.item_list_people_match, parent,
 					false); // not necessary?
 
 			View view = convertView;
 
-			OffersActivity offersActivity = (OffersActivity) getActivity();
-			OfferItemViewHolder holder;
+			PeopleMatchActivity offersActivity = (PeopleMatchActivity) getActivity();
+			PeopleItemViewHolder holder;
 			if (convertView == null)
 				{
 				view = offersActivity.getLayoutInflater().inflate(
-						R.layout.item_list_offer, parent, false);
-				holder = new OfferItemViewHolder();
+						R.layout.item_list_people_match, parent, false);
+				holder = new PeopleItemViewHolder();
 				holder.title = (TextView) view.findViewById(R.id.txtTitle1);
 				holder.title2 = (TextView) view.findViewById(R.id.txtTitle2);
+				holder.txtName = (TextView) view.findViewById(R.id.txtName);
 				holder.txtLocations = (TextView) view
 						.findViewById(R.id.txtLocationsDistance);
 				holder.txtPctToCharity = (TextView) view
 						.findViewById(R.id.txtDonation);
 				holder.image = (ImageView) view.findViewById(R.id.image);
+				holder.upForImage = (ImageView)view.findViewById(R.id.image_upfor);
 				view.setTag(holder);
 				}
 			else
 				{
-				holder = (OfferItemViewHolder) view.getTag();
+				holder = (PeopleItemViewHolder) view.getTag();
 				}
 
 			String s;
-			s = offers.get(position).iconUrl;
-			s = offers.get(position).title;
-			s = offers.get(position).merchant.iconUrl;
+			s = gsUsers.get(position).iconUrl;
+			s = gsUsers.get(position).title;
+		//	s = offers.get(position).merchant.iconUrl;
 
-			holder.title.setText(offers.get(position).title); // title
-			holder.title2.setText(offers.get(position).title2);
-			holder.txtLocations.setText("1 mile");
-			holder.txtPctToCharity
-					.setText(offers.get(position).discountToCharityString);
+			holder.title.setText("Swing Dancing"); //offers.get(position).title); // title
+			holder.title2.setText("Rock Climbing");
+			holder.txtName.setText(gsUsers.get(position).firstName);
+			//holder.txtLocations.setText("1 mile");
+			//holder.txtPctToCharity
+			//		.setText(gsUsers.get(position).discountToCharityString);
 
 			offersActivity.imageLoader.displayImage(
-					offers.get(position).iconUrl, holder.image, options,
+					gsUsers.get(position).iconUrl, holder.image, options,
 					animateFirstListener);
 
+			
+			offersActivity.imageLoader.displayImage(
+					gsUsers.get(position).upForUrl, holder.upForImage, options,
+					animateFirstListener);
 			return view;
 
 			// TextView textView = (TextView) rowView.findViewById(R.id.label);

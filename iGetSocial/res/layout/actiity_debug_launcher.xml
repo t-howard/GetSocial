@@ -28,6 +28,13 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:text="Demo Home Screen"
+                android:layout_margin="10dip"
+                android:onClick="onBtnOpenHomeView" />
+            
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
                 android:text="Go to Register Screen"
                 android:layout_margin="10dip"
                 android:onClick="onBtnOpenRegister" />

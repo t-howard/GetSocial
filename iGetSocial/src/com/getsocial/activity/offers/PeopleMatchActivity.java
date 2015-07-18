@@ -1,16 +1,16 @@
-package com.cds.consumer.activities.offers;
+package com.getsocial.activity.offers;
 
 import static com.getsocial.example.universalimageloader.Constants.IMAGES;
 
 import java.util.Locale;
 
+import com.getsocial.BaseActivity;
 import com.getsocial.R;
 import com.getsocial.example.universalimageloader.ImageGalleryActivity;
 import com.getsocial.example.universalimageloader.ImageGridActivity;
 import com.getsocial.example.universalimageloader.ImageListActivity;
 import com.getsocial.example.universalimageloader.ImagePagerActivity;
 import com.getsocial.example.universalimageloader.Constants.Extra;
-import com.cds.consumer.BaseActivity;
 
 import android.app.Activity;
 import android.app.ActionBar;
@@ -36,7 +36,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class OffersActivity extends BaseActivity implements
+public class PeopleMatchActivity extends BaseActivity implements
 		ActionBar.TabListener
 	{
 
@@ -68,12 +68,12 @@ public class OffersActivity extends BaseActivity implements
 
 		setContentView(R.layout.activity_offers);
 
-		this.greyOutToolbar();
+		//this.greyOutToolbar();
 		Button btn;
 		Drawable top;
 		top = getResources().getDrawable(R.drawable.ic_btn_offers);
-		btn = (Button) findViewById(R.id.btnOffers);
-		btn.setCompoundDrawablesWithIntrinsicBounds(null, top, null, null);
+		//btn = (Button) findViewById(R.id.btnOffers);
+		//btn.setCompoundDrawablesWithIntrinsicBounds(null, top, null, null);
 
 		// Set up the action bar.
 		final ActionBar actionBar = getActionBar();
@@ -175,9 +175,9 @@ public class OffersActivity extends BaseActivity implements
 		// mViewPager.getCurrentItem()
 				);
 
-		OffersNearbyListFragment of;
+		PeopleNearbyListFragment of;
 
-		of = (OffersNearbyListFragment) f;
+		of = (PeopleNearbyListFragment) f;
 
 		if (false)
 			{
@@ -272,20 +272,24 @@ public class OffersActivity extends BaseActivity implements
 			{
 			super(fm);
 			}
-
+ 
 		@Override
 		public Fragment getItem(int position)
 			{
 			// getItem is called to instantiate the fragment for the given page.
 			// Return a PlaceholderFragment (defined as a static inner class
 			// below).
-			if (true)
-				return OffersNearbyListFragment.newInstance(position + 1);
+			 
 			if (position == 0) // comment this out to get it to work
-				return OffersNearbyListFragment.newInstance(position + 1); // why
+				return PeopleNearbyListFragment.newInstance(position + 1); // why
 																			// is
+			
+			if (position > 0)
+				return SocialHistoryPlaceholdersFragment.newInstance(position + 1);
+			if (true)
+				return SocialHistoryPlaceholdersFragment.newInstance(position + 1);
 			if (position == 1)
-				return OffersNearbyListFragment.newInstance(position + 1); // why
+				return PeopleNearbyListFragment.newInstance(position + 1); // why
 																			// is
 																			// this
 																			// different
@@ -311,8 +315,8 @@ public class OffersActivity extends BaseActivity implements
 		@Override
 		public int getCount()
 			{
-			// Show 3 total pages.
-			return 5;
+			 
+			return 2;
 			}
 
 		@Override
@@ -322,15 +326,10 @@ public class OffersActivity extends BaseActivity implements
 			switch (position)
 				{
 				case 0:
-					return ("Featured").toUpperCase(l);
-				case 1:
-					return ("My Incentives").toUpperCase(l);
-				case 2:
-					return ("My Charities").toUpperCase(l);
-				case 3:
 					return ("Nearby").toUpperCase(l);
-				case 4:
-					return "My Merchants".toUpperCase();
+				case 1:
+					return ("Social History").toUpperCase(l);
+				 
 				}
 			return null;
 			}

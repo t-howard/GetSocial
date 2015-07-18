@@ -1,4 +1,4 @@
-package com.cds.consumer.model.proto;
+package com.getsocial.model.proto;
 
 import com.google.android.gms.maps.model.LatLng;
 

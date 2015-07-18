@@ -3,6 +3,8 @@ package com.getsocial;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import android.app.AlertDialog;
 import android.content.Context;
 import android.media.AudioManager;
@@ -21,6 +23,16 @@ public class GSApp
 		tg.startTone(ToneGenerator.TONE_CDMA_CALLDROP_LITE);
 
 		// tg.startTone(ToneGenerator.TONE_PROP_BEEP2);
+		}
+
+	public static LatLng getStartingMapLocation()
+		{
+		return new LatLng(34.145289, -118.116706); // Pasadena City College
+		}
+	
+	public static float getStartingMapZoom()
+		{
+		return 19.5f; // Pasadena City College
 		}
 
 	public static void reportException(Context ctxt, Exception e, String tag)

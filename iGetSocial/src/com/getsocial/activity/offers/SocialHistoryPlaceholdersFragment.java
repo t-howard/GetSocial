@@ -1,4 +1,4 @@
-package com.cds.consumer.activities.offers;
+package com.getsocial.activity.offers;
 
 import com.getsocial.R;
 
@@ -14,7 +14,7 @@ import android.widget.TextView;
 /**
 	 * A placeholder fragment containing a simple view.
 	 */
-	public  class OffersPlaceholderFragment extends Fragment
+	public  class SocialHistoryPlaceholdersFragment extends Fragment
 		{
 		/**
 		 * The fragment argument representing the section number for this
@@ -25,16 +25,16 @@ import android.widget.TextView;
 		/**
 		 * Returns a new instance of this fragment for the given section number.
 		 */
-		public static OffersPlaceholderFragment newInstance(int sectionNumber)
+		public static SocialHistoryPlaceholdersFragment newInstance(int sectionNumber)
 			{
-			OffersPlaceholderFragment fragment = new OffersPlaceholderFragment();
+			SocialHistoryPlaceholdersFragment fragment = new SocialHistoryPlaceholdersFragment();
 			Bundle args = new Bundle();
 			args.putInt(ARG_SECTION_NUMBER, sectionNumber);
 			fragment.setArguments(args);
 			return fragment;
 			}
-
-		public OffersPlaceholderFragment()
+ 
+		public SocialHistoryPlaceholdersFragment()
 			{
 			}
 
@@ -42,7 +42,7 @@ import android.widget.TextView;
 		public View onCreateView(LayoutInflater inflater, ViewGroup container,
 				Bundle savedInstanceState)
 			{
-			View rootView = inflater.inflate(R.layout.test_activity_mapfragment
+			View rootView = inflater.inflate(R.layout.fragment_socialhistory
 					//activity_home,
 					,
 					container,

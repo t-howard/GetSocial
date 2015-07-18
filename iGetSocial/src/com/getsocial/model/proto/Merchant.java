@@ -1,10 +1,10 @@
-package com.cds.consumer.model.proto;
+package com.getsocial.model.proto;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.android.gms.maps.model.LatLng;
-
+  
 public class Merchant
 	{
 	public int id = 0;

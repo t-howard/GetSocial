@@ -40,7 +40,7 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 /**
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  */
-public class ImagePagerActivity extends com.cds.consumer.BaseActivity  {
+public class ImagePagerActivity extends com.getsocial.BaseActivity  {
 
 	private static final String STATE_POSITION = "STATE_POSITION";
 

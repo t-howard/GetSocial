@@ -37,7 +37,7 @@ import com.getsocial.example.universalimageloader.Constants.Extra;
 /**
  * @author Sergey Tarasevich (nostra13[at]gmail[dot]com)
  */
-public class HomeActivity extends com.cds.consumer.BaseActivity  
+public class HomeActivity extends com.getsocial.BaseActivity  
 	{
 
 		private static final String TEST_FILE_NAME = "Universal Image Loader @#&=+-_.,!()~'%20.png";

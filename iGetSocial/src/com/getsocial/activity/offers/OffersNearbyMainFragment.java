@@ -1,4 +1,4 @@
-package com.cds.consumer.activities.offers;
+package com.getsocial.activity.offers;
 
 import static com.getsocial.example.universalimageloader.Constants.IMAGES;
 
@@ -13,7 +13,7 @@ import com.getsocial.example.universalimageloader.ImagePagerActivity;
 import com.getsocial.example.universalimageloader.Constants.Extra;
 import com.getsocial.example.universalimageloader.ImageGridActivity.ImageAdapter;
 import com.getsocial.example.universalimageloader.ImageGridActivity.ImageAdapter.ViewHolder;
-import com.google.android.gms.maps.CameraUpdateFactory;
+
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
@@ -103,7 +103,7 @@ public class OffersNearbyMainFragment extends Fragment
 				.cacheOnDisc(true).considerExifParams(true)
 				.bitmapConfig(Bitmap.Config.RGB_565).build();
 
-		OffersActivity activity123 = (OffersActivity) getActivity();
+		PeopleMatchActivity activity123 = (PeopleMatchActivity) getActivity();
 		
 		GridView listView = (GridView) rootView.findViewById(R.id.gridview);
 		((GridView) listView).setAdapter(new ImageAdapter());
@@ -164,7 +164,7 @@ public class OffersNearbyMainFragment extends Fragment
 		public View getView(int position, View convertView, ViewGroup parent)
 			{
 			 
-			OffersActivity activity123 = (OffersActivity) getActivity();
+			PeopleMatchActivity activity123 = (PeopleMatchActivity) getActivity();
 			  
 			final ViewHolder holder;
 			View view = convertView;
